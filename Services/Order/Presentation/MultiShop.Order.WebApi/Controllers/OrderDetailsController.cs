@@ -16,6 +16,7 @@ namespace MultiShop.Order.WebApi.Controllers
         private readonly UpdateOrderDetailQueryHandler _updateOrderDetailQueryHandler;
         private readonly RemoveOrderDetailQueryHandler _RemoveOrderDetailQueryHandler;
 
+
         public OrderDetailsController(GetOrderDetailQueryHandler getOrderDetailQueryHandler, GetOrderDetailByIdQueryHandler getOrderDetailByIdQueryHandler, CreateOrderDetailQueryHandler createOrderDetailQueryHandler, UpdateOrderDetailQueryHandler updateOrderDetailQueryHandler, RemoveOrderDetailQueryHandler removeOrderDetailQueryHandler)
         {
             _getOrderDetailQueryHandler = getOrderDetailQueryHandler;
@@ -59,6 +60,5 @@ namespace MultiShop.Order.WebApi.Controllers
             await _RemoveOrderDetailQueryHandler.Handle(new RemoveOrderDetailCommand(id));
             return Ok("Order Detail removed successfully");
         }
-
     }
 }
